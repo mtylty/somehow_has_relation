@@ -1,0 +1,402 @@
+  [4;36;1mSQL (25.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (12.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-16 11:46:10) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  actionpack (2.3.11) lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  actionpack (2.3.11) lib/action_controller/routing/route_set.rb:442:in `recognize'
+  actionpack (2.3.11) lib/action_controller/routing/route_set.rb:437:in `call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:87:in `dispatch'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:121:in `_call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:29:in `call'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:29:in `call'
+  activerecord (2.3.11) lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:9:in `cache'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:28:in `call'
+  activerecord (2.3.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  actionpack (2.3.11) lib/action_controller/string_coercion.rb:25:in `call'
+  rack (1.1.2) lib/rack/head.rb:9:in `call'
+  rack (1.1.2) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (2.3.11) lib/action_controller/params_parser.rb:15:in `call'
+  actionpack (2.3.11) lib/action_controller/session/cookie_store.rb:99:in `call'
+  actionpack (2.3.11) lib/action_controller/failsafe.rb:26:in `call'
+  rack (1.1.2) lib/rack/lock.rb:11:in `call'
+  rack (1.1.2) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.1.2) lib/rack/lock.rb:11:in `call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:106:in `call'
+  rack (1.1.2) lib/rack/lint.rb:47:in `_call'
+  rack (1.1.2) lib/rack/lint.rb:35:in `call'
+  actionpack (2.3.11) lib/action_controller/integration.rb:317:in `process'
+  actionpack (2.3.11) lib/action_controller/integration.rb:197:in `get'
+  actionpack (2.3.11) lib/action_controller/integration.rb:515:in `__send__'
+  actionpack (2.3.11) lib/action_controller/integration.rb:515:in `get'
+  /test/dummy2/test/performance/browsing_test.rb:7:in `test_homepage'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `__send__'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `run_test'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:249:in `benchmark'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:281:in `with_gc_stats'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:247:in `benchmark'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `send'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `run_test'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:78:in `run_warmup'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:41:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit.rb:279
+  rake (0.8.7) lib/rake/rake_test_loader.rb:5
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-16 11:46:10) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  actionpack (2.3.11) lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  actionpack (2.3.11) lib/action_controller/routing/route_set.rb:442:in `recognize'
+  actionpack (2.3.11) lib/action_controller/routing/route_set.rb:437:in `call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:87:in `dispatch'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:121:in `_call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:29:in `call'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:29:in `call'
+  activerecord (2.3.11) lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:9:in `cache'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:28:in `call'
+  activerecord (2.3.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  actionpack (2.3.11) lib/action_controller/string_coercion.rb:25:in `call'
+  rack (1.1.2) lib/rack/head.rb:9:in `call'
+  rack (1.1.2) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (2.3.11) lib/action_controller/params_parser.rb:15:in `call'
+  actionpack (2.3.11) lib/action_controller/session/cookie_store.rb:99:in `call'
+  actionpack (2.3.11) lib/action_controller/failsafe.rb:26:in `call'
+  rack (1.1.2) lib/rack/lock.rb:11:in `call'
+  rack (1.1.2) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.1.2) lib/rack/lock.rb:11:in `call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:106:in `call'
+  rack (1.1.2) lib/rack/lint.rb:47:in `_call'
+  rack (1.1.2) lib/rack/lint.rb:35:in `call'
+  actionpack (2.3.11) lib/action_controller/integration.rb:317:in `process'
+  actionpack (2.3.11) lib/action_controller/integration.rb:197:in `get'
+  actionpack (2.3.11) lib/action_controller/integration.rb:515:in `__send__'
+  actionpack (2.3.11) lib/action_controller/integration.rb:515:in `get'
+  /test/dummy2/test/performance/browsing_test.rb:7:in `test_homepage'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `__send__'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `run_test'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:256:in `profile'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `send'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `run_test'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:95:in `__send__'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:95:in `run_test'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:178:in `run'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:178:in `times'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:178:in `run'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:88:in `run_profile'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:45:in `run'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:43:in `each'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:43:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit.rb:279
+  rake (0.8.7) lib/rake/rake_test_loader.rb:5
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-16 11:47:41) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  actionpack (2.3.11) lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  actionpack (2.3.11) lib/action_controller/routing/route_set.rb:442:in `recognize'
+  actionpack (2.3.11) lib/action_controller/routing/route_set.rb:437:in `call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:87:in `dispatch'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:121:in `_call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:29:in `call'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:29:in `call'
+  activerecord (2.3.11) lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:9:in `cache'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:28:in `call'
+  activerecord (2.3.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  actionpack (2.3.11) lib/action_controller/string_coercion.rb:25:in `call'
+  rack (1.1.2) lib/rack/head.rb:9:in `call'
+  rack (1.1.2) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (2.3.11) lib/action_controller/params_parser.rb:15:in `call'
+  actionpack (2.3.11) lib/action_controller/session/cookie_store.rb:99:in `call'
+  actionpack (2.3.11) lib/action_controller/failsafe.rb:26:in `call'
+  rack (1.1.2) lib/rack/lock.rb:11:in `call'
+  rack (1.1.2) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.1.2) lib/rack/lock.rb:11:in `call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:106:in `call'
+  rack (1.1.2) lib/rack/lint.rb:47:in `_call'
+  rack (1.1.2) lib/rack/lint.rb:35:in `call'
+  actionpack (2.3.11) lib/action_controller/integration.rb:317:in `process'
+  actionpack (2.3.11) lib/action_controller/integration.rb:197:in `get'
+  actionpack (2.3.11) lib/action_controller/integration.rb:515:in `__send__'
+  actionpack (2.3.11) lib/action_controller/integration.rb:515:in `get'
+  /test/dummy2/test/performance/browsing_test.rb:7:in `test_homepage'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `__send__'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `run_test'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:249:in `benchmark'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:281:in `with_gc_stats'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:247:in `benchmark'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `send'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `run_test'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:78:in `run_warmup'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:41:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit.rb:279
+  rake (0.8.7) lib/rake/rake_test_loader.rb:5
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-16 11:47:41) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  actionpack (2.3.11) lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  actionpack (2.3.11) lib/action_controller/routing/route_set.rb:442:in `recognize'
+  actionpack (2.3.11) lib/action_controller/routing/route_set.rb:437:in `call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:87:in `dispatch'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:121:in `_call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:29:in `call'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:29:in `call'
+  activerecord (2.3.11) lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:9:in `cache'
+  activerecord (2.3.11) lib/active_record/query_cache.rb:28:in `call'
+  activerecord (2.3.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  actionpack (2.3.11) lib/action_controller/string_coercion.rb:25:in `call'
+  rack (1.1.2) lib/rack/head.rb:9:in `call'
+  rack (1.1.2) lib/rack/methodoverride.rb:24:in `call'
+  actionpack (2.3.11) lib/action_controller/params_parser.rb:15:in `call'
+  actionpack (2.3.11) lib/action_controller/session/cookie_store.rb:99:in `call'
+  actionpack (2.3.11) lib/action_controller/failsafe.rb:26:in `call'
+  rack (1.1.2) lib/rack/lock.rb:11:in `call'
+  rack (1.1.2) lib/rack/lock.rb:11:in `synchronize'
+  rack (1.1.2) lib/rack/lock.rb:11:in `call'
+  actionpack (2.3.11) lib/action_controller/dispatcher.rb:106:in `call'
+  rack (1.1.2) lib/rack/lint.rb:47:in `_call'
+  rack (1.1.2) lib/rack/lint.rb:35:in `call'
+  actionpack (2.3.11) lib/action_controller/integration.rb:317:in `process'
+  actionpack (2.3.11) lib/action_controller/integration.rb:197:in `get'
+  actionpack (2.3.11) lib/action_controller/integration.rb:515:in `__send__'
+  actionpack (2.3.11) lib/action_controller/integration.rb:515:in `get'
+  /test/dummy2/test/performance/browsing_test.rb:7:in `test_homepage'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `__send__'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `run_test'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:256:in `profile'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `send'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:57:in `run_test'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:95:in `__send__'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:95:in `run_test'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:178:in `run'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:178:in `times'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:178:in `run'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:88:in `run_profile'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:45:in `run'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:43:in `each'
+  activesupport (2.3.11) lib/active_support/testing/performance.rb:43:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'
+  /Users/matteo/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/test/unit.rb:279
+  rake (0.8.7) lib/rake/rake_test_loader.rb:5
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m

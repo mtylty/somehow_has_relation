@@ -1,0 +1,3 @@
+module SomehowHasRelation
+  # Your code goes here...
+end
