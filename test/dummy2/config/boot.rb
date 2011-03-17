@@ -2,6 +2,7 @@
 # Configure your app in config/environment.rb and config/environments/*.rb
 
 RAILS_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(RAILS_ROOT)
+$:.unshift File.expand_path('../../../../lib', __FILE__)
 
 module Rails
   class << self

@@ -2,6 +2,8 @@
 ENV["RAILS_ENV"] = "test"
 ENV["RAILS_VER"] ||= "2"
 
+require "somehow_has_relation"
+
 require File.expand_path("../dummy#{ENV["RAILS_VER"]}/config/environment.rb",  __FILE__)
 
 if ENV["RAILS_VER"] == "2"
