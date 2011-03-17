@@ -2,7 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-Bundler.require
 require "somehow_has_relation"
 
 module Dummy3
