@@ -66,7 +66,7 @@ class SomehowHasRelationTest < ActiveSupport::TestCase
 
     Post.somehow_has :many => :comments
     Author.somehow_has :many => :comments, :through => :posts
-    assert_equal [comments1, comments2], @author.related_comments
+    assert_equal [comments1, comments2].flatten, @author.related_comments
   end
 
   test "3-steps relations should work just like 2-steps and n-steps relations" do
@@ -78,6 +78,25 @@ class SomehowHasRelationTest < ActiveSupport::TestCase
     Post.somehow_has :many => :comments
     Author.somehow_has :many => :comments, :through => :posts
     Bio.somehow_has :many => :comments, :through => :author
-    assert_equal [comments1, comments2], @bio.related_comments
+    assert_equal [comments1, comments2].flatten, @bio.related_comments
+  end
+
+  test "somehow_has takes an :if argument which specifies a Proc to check against relations" do
+    new_comment, old_comment = Comment.create, Comment.create
+    old_comment.update_attribute :created_at, 1.day.ago
+    recent_comments = Proc.new{|comment| comment.created_at >= 1.hour.ago }
+    @author = Author.create(:posts => [Post.create(:comments => [new_comment, old_comment])])
+
+    Author.somehow_has :many => :comments, :through => :posts, :if => recent_comments
+    assert_equal [new_comment], @author.related_comments
+  end
+
+  test "somehow_has takes an :if argument which specifies a Symbol for a method that returns a boolean to check against relations" do
+    new_comment, old_comment = Comment.create, Comment.create
+    old_comment.update_attribute :created_at, 1.day.ago
+    @author = Author.create(:posts => [Post.create(:comments => [new_comment, old_comment])])
+
+    Author.somehow_has :many => :comments, :through => :posts, :if => :recent?
+    assert_equal [new_comment], @author.related_comments
   end
 end
