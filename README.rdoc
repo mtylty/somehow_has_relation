@@ -76,7 +76,7 @@ RAILS_VER defaults to 2, so, if you need to test the rails2 version, you can ski
 
 == About
 
-This gem was developed to support http://openwisp.caspur.it/ an OSS Wireless Internet Service Provider mainly made
+This gem was developed to support http://openwisp.caspur.it an OSS Wireless Internet Service Provider mainly made
 with Ruby on Rails.
 You can have a look at http://spider.caspur.it/projects/owm/repository to look at how SomehowHasRelation was used
 on a complex rails application.
