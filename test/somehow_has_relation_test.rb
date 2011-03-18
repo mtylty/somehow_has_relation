@@ -99,4 +99,9 @@ class SomehowHasRelationTest < ActiveSupport::TestCase
     Author.somehow_has :many => :comments, :through => :posts, :if => :recent?
     assert_equal [new_comment], @author.related_comments
   end
+
+  test "somehow_has takes an :as argument which overloads the defined related_%{relation_name} method name" do
+    Post.somehow_has :many => :comments, :as => :blabla
+    assert Post.instance_methods.include? :blabla.to_s
+  end
 end

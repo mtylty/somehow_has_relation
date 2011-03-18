@@ -6900,3 +6900,535 @@ Migrating to AddBioIdToComment (20110316155643)
   [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:29:53', "post_id" = 1 WHERE "id" = 2[0m
   [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:29:53', '2011-03-18 10:29:53', NULL)[0m
   [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:29:53', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20110316130454)
+Migrating to CreateAuthors (20110316142731)
+Migrating to CreateComments (20110316144725)
+Migrating to RemovePostIdFromAuthor (20110316154717)
+Migrating to AddAuthorIdToPost (20110316154912)
+Migrating to CreateBios (20110316155523)
+Migrating to AddBioIdToComment (20110316155643)
+  [4;36;1mAuthor Create (0.4ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.2ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', 1)[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.0ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:44:23', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.0ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:44:23', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "bio_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "bio_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;35;1mBio Update (0.1ms)[0m   [0mUPDATE "bios" SET "updated_at" = '2011-03-18 10:44:23', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;36;1mComment Update (0.0ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:44:23', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.0ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:44:23', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', 1)[0m
+  [4;36;1mAuthor Create (0.2ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "created_at" = '2011-03-17 10:44:23' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:44:23', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "created_at" = '2011-03-17 10:44:23' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:44:23', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:44:23', '2011-03-18 10:44:23', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:44:23', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20110316130454)
+Migrating to CreateAuthors (20110316142731)
+Migrating to CreateComments (20110316144725)
+Migrating to RemovePostIdFromAuthor (20110316154717)
+Migrating to AddAuthorIdToPost (20110316154912)
+Migrating to CreateBios (20110316155523)
+Migrating to AddBioIdToComment (20110316155643)
+  [4;36;1mAuthor Create (0.4ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.2ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', 1)[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:45:58', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.0ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:45:58', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mComment Create (0.3ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "bio_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "bio_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;35;1mBio Update (0.1ms)[0m   [0mUPDATE "bios" SET "updated_at" = '2011-03-18 10:45:58', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:45:58', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.0ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:45:58', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', 1)[0m
+  [4;36;1mAuthor Create (0.2ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "created_at" = '2011-03-17 10:45:58' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:45:58', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "created_at" = '2011-03-17 10:45:58' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;36;1mComment Update (0.0ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:45:58', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:45:58', '2011-03-18 10:45:58', NULL)[0m
+  [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:45:58', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20110316130454)
+Migrating to CreateAuthors (20110316142731)
+Migrating to CreateComments (20110316144725)
+Migrating to RemovePostIdFromAuthor (20110316154717)
+Migrating to AddAuthorIdToPost (20110316154912)
+Migrating to CreateBios (20110316155523)
+Migrating to AddBioIdToComment (20110316155643)
+  [4;36;1mAuthor Create (0.4ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.3ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', 1)[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:09', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.0ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:09', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "bio_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "bio_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;35;1mBio Update (0.1ms)[0m   [0mUPDATE "bios" SET "updated_at" = '2011-03-18 10:46:09', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:09', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.1ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:09', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', 1)[0m
+  [4;36;1mAuthor Create (0.2ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "created_at" = '2011-03-17 10:46:09' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:09', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "created_at" = '2011-03-17 10:46:09' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:09', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:09', '2011-03-18 10:46:09', NULL)[0m
+  [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:09', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20110316130454)
+Migrating to CreateAuthors (20110316142731)
+Migrating to CreateComments (20110316144725)
+Migrating to RemovePostIdFromAuthor (20110316154717)
+Migrating to AddAuthorIdToPost (20110316154912)
+Migrating to CreateBios (20110316155523)
+Migrating to AddBioIdToComment (20110316155643)
+  [4;36;1mAuthor Create (0.4ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.3ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', 1)[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:48', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.0ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:48', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "bio_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "bio_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;35;1mBio Update (0.1ms)[0m   [0mUPDATE "bios" SET "updated_at" = '2011-03-18 10:46:48', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:48', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.0ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:48', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', 1)[0m
+  [4;36;1mAuthor Create (0.2ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "created_at" = '2011-03-17 10:46:48' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:48', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "created_at" = '2011-03-17 10:46:48' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:46:48', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:46:48', '2011-03-18 10:46:48', NULL)[0m
+  [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:46:48', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20110316130454)
+Migrating to CreateAuthors (20110316142731)
+Migrating to CreateComments (20110316144725)
+Migrating to RemovePostIdFromAuthor (20110316154717)
+Migrating to AddAuthorIdToPost (20110316154912)
+Migrating to CreateBios (20110316155523)
+Migrating to AddBioIdToComment (20110316155643)
+  [4;36;1mAuthor Create (0.4ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.2ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', 1)[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:00', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.0ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:00', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "bio_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "bio_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;35;1mBio Update (0.1ms)[0m   [0mUPDATE "bios" SET "updated_at" = '2011-03-18 10:47:00', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:00', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.1ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:00', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', 1)[0m
+  [4;36;1mAuthor Create (0.2ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "created_at" = '2011-03-17 10:47:00' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:00', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "created_at" = '2011-03-17 10:47:00' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:00', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:00', '2011-03-18 10:47:00', NULL)[0m
+  [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:00', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20110316130454)
+Migrating to CreateAuthors (20110316142731)
+Migrating to CreateComments (20110316144725)
+Migrating to RemovePostIdFromAuthor (20110316154717)
+Migrating to AddAuthorIdToPost (20110316154912)
+Migrating to CreateBios (20110316155523)
+Migrating to AddBioIdToComment (20110316155643)
+  [4;36;1mAuthor Create (0.4ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:38', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:38', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.3ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', 1)[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', NULL, NULL)[0m
+  [4;35;1mComment Create (0.0ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:38', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:38', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:38', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:38', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:38', '2011-03-18 10:47:38', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:38', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.0ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:38', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "bio_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "bio_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL)[0m
+  [4;35;1mBio Update (0.1ms)[0m   [0mUPDATE "bios" SET "updated_at" = '2011-03-18 10:47:39', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.0ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:39', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.1ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:39', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', 1)[0m
+  [4;36;1mAuthor Create (0.2ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "created_at" = '2011-03-17 10:47:39' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL)[0m
+  [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:39', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "created_at" = '2011-03-17 10:47:39' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:47:39', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:47:39', '2011-03-18 10:47:39', NULL)[0m
+  [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:47:39', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20110316130454)
+Migrating to CreateAuthors (20110316142731)
+Migrating to CreateComments (20110316144725)
+Migrating to RemovePostIdFromAuthor (20110316154717)
+Migrating to AddAuthorIdToPost (20110316154912)
+Migrating to CreateBios (20110316155523)
+Migrating to AddBioIdToComment (20110316155643)
+  [4;36;1mAuthor Create (0.4ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.2ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;35;1mBio Create (0.2ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', 1)[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:48:24', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.1ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:48:24', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mComment Create (0.2ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "bio_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "bio_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;35;1mBio Update (0.1ms)[0m   [0mUPDATE "bios" SET "updated_at" = '2011-03-18 10:48:24', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;36;1mPost Create (0.1ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 2 WHERE "id" = 3[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 2 WHERE "id" = 4[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:48:24', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mPost Update (0.0ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-03-18 10:48:24', "author_id" = 1 WHERE "id" = 2[0m
+  [4;35;1mBio Create (0.1ms)[0m   [0mINSERT INTO "bios" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', 1)[0m
+  [4;36;1mAuthor Create (0.2ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;36;1mComment Create (0.1ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', 1)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.1ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "created_at" = '2011-03-17 10:48:24' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;35;1mPost Update (0.1ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:48:24', "author_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mComment Create (0.2ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;35;1mComment Create (0.1ms)[0m   [0mINSERT INTO "comments" ("created_at", "updated_at", "post_id", "bio_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL, NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "created_at" = '2011-03-17 10:48:24' WHERE "id" = 2[0m
+  [4;35;1mPost Create (0.1ms)[0m   [0mINSERT INTO "posts" ("created_at", "updated_at", "author_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;36;1mComment Update (0.1ms)[0m   [0;1mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mComment Update (0.0ms)[0m   [0mUPDATE "comments" SET "updated_at" = '2011-03-18 10:48:24', "post_id" = 1 WHERE "id" = 2[0m
+  [4;36;1mAuthor Create (0.1ms)[0m   [0;1mINSERT INTO "authors" ("created_at", "updated_at", "post_id") VALUES('2011-03-18 10:48:24', '2011-03-18 10:48:24', NULL)[0m
+  [4;35;1mPost Update (0.0ms)[0m   [0mUPDATE "posts" SET "updated_at" = '2011-03-18 10:48:24', "author_id" = 1 WHERE "id" = 1[0m

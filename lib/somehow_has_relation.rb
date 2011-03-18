@@ -13,9 +13,10 @@ module SomehowHasRelation
 
       prefix = "related"
       relation = params[:one] || params[:many]
+      related = params[:as] || "#{prefix}_#{relation}"
 
       # Dynamic Instance Method related_%{relation_name}
-      define_method("#{prefix}_#{relation}") do
+      define_method(related) do
         params[:through] ? look_for(relation, params[:through]).flatten : send(relation)
       end
     end
