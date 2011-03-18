@@ -2,14 +2,15 @@ require 'test_helper'
 
 class SomehowHasRelationTest < ActiveSupport::TestCase
   setup do
-    Post.send(:include, SomehowHasRelation)
-    Author.send(:include, SomehowHasRelation)
-    Bio.send(:include, SomehowHasRelation)
     Post.somehow_has
   end
 
   test "somehow_has_relation is a Module" do
     assert_kind_of Module, SomehowHasRelation
+  end
+
+  test "ActiveRecord::Base should have a somehow_has method" do
+    assert ActiveRecord::Base.methods.include? :somehow_has.to_s
   end
 
   test "when somehow_has is called, it should define SOMEHOW_HAS_RELATION" do

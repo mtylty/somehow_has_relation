@@ -1,3 +1,5 @@
+require 'active_record'
+
 module SomehowHasRelation
   def self.included(base)
     base.send :extend, ClassMethods
@@ -45,3 +47,5 @@ module SomehowHasRelation
     end
   end
 end
+
+ActiveRecord::Base.send :include, SomehowHasRelation
