@@ -104,4 +104,11 @@ class SomehowHasRelationTest < ActiveSupport::TestCase
     Post.somehow_has :many => :comments, :as => :blabla
     assert Post.instance_methods.include? :blabla.to_s
   end
+
+  test ":if argument should also work for somehow_has :one" do
+    @bio = Bio.create(:author => Author.create)
+
+    Bio.somehow_has :one => :author, :if => Proc.new{|author| author.created_at <= 10.years.ago}
+    assert_nil @bio.related_author
+  end
 end

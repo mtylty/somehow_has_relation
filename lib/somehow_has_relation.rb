@@ -12,12 +12,13 @@ module SomehowHasRelation
       const_set('SOMEHOW_HAS_RELATION', params)
 
       prefix = "related"
+      filter = params[:if]
       relation = params[:one] || params[:many]
       related = params[:as] || "#{prefix}_#{relation}"
 
       # Dynamic Instance Method related_%{relation_name}
       define_method(related) do
-        params[:through] ? look_for(relation, params[:through]).flatten : send(relation)
+        params[:through] ? somehow_look_for(relation, params[:through]).flatten : send_and_filter(relation, filter)
       end
     end
 
@@ -29,22 +30,36 @@ module SomehowHasRelation
   end
 
   module InstanceMethods
-    def look_for(relation, through)
-      first_step = send(through)
+    def somehow_look_for(relation, through)
+      first_step = send_and_filter(through)
       condition = self.class.somehow_has_options(:if)
 
       if first_step.is_a? Array
-        first_step.map{|instance| instance.keep_looking_for(relation, condition)}
+        first_step.map{|instance| instance.somehow_keep_looking_for(relation, condition)}
       else
-        first_step.keep_looking_for(relation, condition)
+        first_step.somehow_keep_looking_for(relation, condition)
       end
     end
 
-    def keep_looking_for(relation, condition=nil)
+    def somehow_keep_looking_for(relation, condition=nil)
       if self.class.somehow_has_options :through
-        look_for(relation, self.class.somehow_has_options(:through))
+        somehow_look_for(relation, self.class.somehow_has_options(:through))
       else
-        condition.nil? ? send(relation) : send(relation).select{|instance| condition.to_proc.call(instance)}
+        condition.nil? ? send_and_filter(relation) : send_and_filter(relation, condition)
+      end
+    end
+
+    private
+
+    def send_and_filter(method, filter_proc=nil)
+      filter_proc ? filter_relations_with(send(method), filter_proc) : send(method)
+    end
+
+    def filter_relations_with(to_filter, filter_proc)
+      if to_filter.is_a? Array
+        to_filter.select(&filter_proc)
+      elsif filter_proc.to_proc.call(to_filter)
+        to_filter
       end
     end
   end
