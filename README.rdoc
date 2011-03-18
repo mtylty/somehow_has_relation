@@ -1,0 +1,82 @@
+= SomehowHasRelation
+
+A simple gem/plugin that can be used to define active_record relations between multiple models.
+This means that, when proper has_many, has_one, belongs_to methods have been defined, you can 
+reach a far away (in tearms of relations) model by calling a single method.
+It uses recursion so it is teoretically possible to ignite endless recursion loops... be careful!
+
+
+== Installation
+
+In <b>Rails 3</b>, add this to your Gemfile and run the +bundle+ command.
+
+  gem "somehow_has_relation"
+
+In <b>Rails 2</b>, add this to your environment.rb file.
+
+  config.gem "somehow_has_relation"
+
+Alternatively, you can install it as a plugin.
+
+  rails plugin install git://github.com/mtylty/somehow_has_relation.git
+
+== Usage
+
+Given you declared some models like this:
+
+  class Post < ActiveRecord::Base
+    belongs_to :author
+    has_many :comments
+  end
+
+  class Author < ActiveRecord::Base
+    has_many :posts
+
+    somehow_has :many => :comments, :through => :posts
+  end
+
+  class Comment < ActiveRecord::Base
+    belongs_to :post
+  end
+
+You can then retrieve an author's posts' comments by calling:
+
+  Author.first.related_comments
+
+What happens under the hood is that SomehowHasRelation recursively uses send() to look for what you have defined
+with somehow_has. The length of the recursion is not limited to 3 models of course. Multiple somehow_has methods
+can be defined over various models to achieve a chain of relations that ultimately handle all the recursions
+and arrays and associations for you. At the end, you will always get an Array (flattened) containing the
+related models.
+
+You can also specify options such as:
+
+  somehow_has :one => :relation_name, :if => Proc.new{|model_instance| model_instance.created_at >= 1.day.ago}
+
+  somehow_has :many => :relation_name, :as => :use_this_method_name_instead_of_related_relation_name_method
+
+== Testing
+
+The documentation is very limited (this README), but the SomehowHasRelation was developed TDD style so feel free
+to clone this repository and run the tests, or write some more :).
+
+Inside the test directory, there are two dummy rails applications, one for rails2, the other for rails3.
+The folder structure was taken and modified by josevalim's {enginex}[git://github.com/josevalim/enginex.git]
+to support both rails2 and rails3 (see the About section on why).
+
+To run the tests for a specific version of rails you can:
+
+  RAILS_VER=2 bundle install && rake test
+
+or
+
+  RAILS_VER=3 bundle install && rake test
+
+RAILS_VER defaults to 2, so, if you need to test the rails2 version, you can skip it.
+
+== About
+
+This gem was developed to support http://openwisp.caspur.it/ an OSS Wireless Internet Service Provider mainly made
+with Ruby on Rails.
+You can have a look at http://spider.caspur.it/projects/owm/repository to look at how SomehowHasRelation was used
+on a complex rails application.
