@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Matteo Latini"]
   s.email       = ["mtylty@gmail.com", "m.latini@caspur.it"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/mtylty/somehow_has_relation"
   s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.description = %q{simple recursive activerecord relations for rails2 and rails3}
 
   s.rubyforge_project = "somehow_has_relation"
 
