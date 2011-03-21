@@ -111,4 +111,17 @@ class SomehowHasRelationTest < ActiveSupport::TestCase
     Bio.somehow_has :one => :author, :if => Proc.new{|author| author.created_at <= 10.years.ago}
     assert_nil @bio.related_author
   end
+
+  test "multiple somehow_has methods should define multiple recursive relations" do 
+    comments1, comments2 = [Comment.create, Comment.create], [Comment.create, Comment.create]
+    bio = Bio.create(:comments => comments1)
+    @author = Author.create(:posts => [Post.create(:comments => comments2)], :bio => bio)
+
+    Author.somehow_has :one => :bio
+    Author.somehow_has :many => :comments, :through => :bio, :as => :related_bio_comments
+    Author.somehow_has :many => :comments, :through => :posts, :as => :related_posts_comments
+    assert_equal bio, @author.related_bio
+    assert_equal comments1, @author.related_bio_comments
+    assert_equal comments2, @author.related_posts_comments
+  end
 end
