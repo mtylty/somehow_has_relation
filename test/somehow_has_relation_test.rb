@@ -124,4 +124,18 @@ class SomehowHasRelationTest < ActiveSupport::TestCase
     assert_equal comments1, @author.related_bio_comments
     assert_equal comments2, @author.related_posts_comments
   end
+
+  test "when there is no :one related, return nil" do
+    @post = Post.create
+    Post.somehow_has :one => :author
+
+    assert_nil @post.related_author
+  end
+
+  test "when there is no :many related, return []" do
+    @post = Post.create
+    Post.somehow_has :many => :comments
+
+    assert_equal [], @post.related_comments
+  end
 end

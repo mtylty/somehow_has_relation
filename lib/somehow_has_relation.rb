@@ -19,8 +19,12 @@ module SomehowHasRelation
 
       # Dynamic Instance Method related_%{relation_name}
       define_method(related) do
-        somehow_got = params[:through] ? somehow_look_for(relation, params[:through]) : send_and_filter(relation, filter)
-        to_flatten ? somehow_got.flatten : somehow_got
+        begin
+          somehow_got = params[:through] ? somehow_look_for(relation, params[:through]) : send_and_filter(relation, filter)
+          to_flatten ? somehow_got.flatten : somehow_got
+        rescue
+          [] if params[:many]
+        end
       end
     end
 
