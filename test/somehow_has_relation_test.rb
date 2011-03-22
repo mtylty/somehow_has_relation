@@ -26,10 +26,13 @@ class SomehowHasRelationTest < ActiveSupport::TestCase
   end
 
   test "relations should work even when somehow_has has not been defined for first step" do
-    @post = Post.create(:author => Author.create, :comments => [Comment.create, Comment.create])
+    destroy_somehow_has
+    comments = [Comment.create, Comment.create]
+    post = Post.create(:comments => comments)
+    @author = Author.create(:posts => [post])
 
-    assert_equal @post.author, @post.related_author
-    assert_equal @post.comments, @post.related_comments
+    Author.somehow_has :many => :comments, :through => :posts
+    assert_equal post.comments, @author.related_comments
   end
 
   test "1-step relation defines a method prefixed with related_ for standard associations methods" do
@@ -151,7 +154,7 @@ class SomehowHasRelationTest < ActiveSupport::TestCase
 
   def destroy_somehow_has
     models.each do |model|
-      model.send(:remove_class_variable, :@@somehow_has_relation_options)
+      model.send(:remove_class_variable, :@@somehow_has_relation_options) rescue next
     end
   end
 end

@@ -25,7 +25,12 @@ module SomehowHasRelation
 
       # Dynamic Instance Method related_%{relation_name}
       define_method(related) do
-        somehow_found_or_recur relation, current_options[:if], current_options
+        found = somehow_found_or_recur relation, current_options[:if], current_options
+        if current_options.has_key?(:one)
+          found.flatten.compact.first rescue found
+        elsif current_options.has_key?(:many)
+          found.flatten.compact rescue []
+        end
       end
     end
   end
@@ -42,24 +47,28 @@ module SomehowHasRelation
     end
 
     def somehow_found_or_recur(relation, condition=nil, opts=nil)
-      opts ||= self.class.send(:class_variable_get, :@@somehow_has_relation_options)
-      opts = [opts] unless opts.is_a? Array
+      if self.class.send(:class_variable_defined?, :@@somehow_has_relation_options)
+        opts ||= self.class.send(:class_variable_get, :@@somehow_has_relation_options)
+        opts = [opts] unless opts.is_a? Array
 
-      found = []
+        found = []
 
-      opts.each do |opt|
-        begin
-          if opt.has_key?(:through)
-            found << somehow_recur(relation, opt[:through], opt[:if])
-          else
-            return send_and_filter(relation, condition)
+        opts.each do |opt|
+          begin
+            if opt.has_key?(:through)
+              found << somehow_recur(relation, opt[:through], opt[:if])
+            else
+              return send_and_filter(relation, condition)
+            end
+          rescue
+            found << []
           end
-        rescue
-          found << (opt.has_key?(:many) ? [] : nil)
         end
-      end
 
-      found.all?{|elem| elem.nil? || (elem.is_a?(Array) && elem.empty?)} ? nil : found.compact.flatten
+        found
+      else
+        send_and_filter(relation, condition)
+      end
     end
 
     private
