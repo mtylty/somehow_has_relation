@@ -27,7 +27,7 @@ module SomehowHasRelation
       define_method(related) do
         found = somehow_found_or_recur relation, current_options[:if], current_options
         if current_options.has_key?(:one)
-          found.flatten.compact.first rescue found
+          found.flatten.compact.first rescue nil
         elsif current_options.has_key?(:many)
           found.flatten.compact rescue []
         end
@@ -58,7 +58,7 @@ module SomehowHasRelation
             if opt.has_key?(:through)
               found << somehow_recur(relation, opt[:through], opt[:if])
             else
-              return send_and_filter(relation, condition)
+              return [send_and_filter(relation, condition)]
             end
           rescue
             found << []
@@ -67,7 +67,7 @@ module SomehowHasRelation
 
         found
       else
-        send_and_filter(relation, condition)
+        [send_and_filter(relation, condition)]
       end
     end
 
