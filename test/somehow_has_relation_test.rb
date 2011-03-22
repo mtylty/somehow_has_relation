@@ -1,9 +1,8 @@
 require 'test_helper'
 
 class SomehowHasRelationTest < ActiveSupport::TestCase
-  setup do
-    Post.somehow_has
-  end
+  setup :init_somehow_has
+  teardown :destroy_somehow_has
 
   test "somehow_has_relation is a Module" do
     assert_kind_of Module, SomehowHasRelation
@@ -13,18 +12,17 @@ class SomehowHasRelationTest < ActiveSupport::TestCase
     assert ActiveRecord::Base.methods.include? :somehow_has.to_s
   end
 
-  test "when somehow_has is called, it should define SOMEHOW_HAS_RELATION" do
-    assert Post.const_defined?('SOMEHOW_HAS_RELATION')
+  test "when somehow_has is called, it should define @@somehow_has_relation_options" do
+    assert Post.class_variable_defined?(:@@somehow_has_relation_options)
   end
 
-  test "an Hash of parameters should be passed to somehow_has" do
-    assert_equal Hash, Post::SOMEHOW_HAS_RELATION.class
-  end
-
-  test "reinitialize when somehow_has is called more than once" do
+  test "an Array of Hash of parameters should be passed to somehow_has" do
     params = {:newparam => 'newvalue'}
     Post.somehow_has params
-    assert_equal params, Post::SOMEHOW_HAS_RELATION
+
+    assert_equal Array, Post.send(:class_variable_get, :@@somehow_has_relation_options).class
+    assert_equal Hash, Post.send(:class_variable_get, :@@somehow_has_relation_options).first.class
+    assert_equal params, Post.send(:class_variable_get, :@@somehow_has_relation_options).last
   end
 
   test "relations should work even when somehow_has has not been defined for first step" do
@@ -137,5 +135,23 @@ class SomehowHasRelationTest < ActiveSupport::TestCase
     Post.somehow_has :many => :comments
 
     assert_equal [], @post.related_comments
+  end
+
+  private
+
+  def models
+    [Post, Author, Bio, Comment]
+  end
+
+  def init_somehow_has
+    models.each do |model|
+      model.somehow_has
+    end
+  end
+
+  def destroy_somehow_has
+    models.each do |model|
+      model.send(:remove_class_variable, :@@somehow_has_relation_options)
+    end
   end
 end

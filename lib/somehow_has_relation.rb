@@ -8,51 +8,58 @@ module SomehowHasRelation
 
   module ClassMethods
     def somehow_has(params={})
-      remove_const('SOMEHOW_HAS_RELATION') if const_defined?('SOMEHOW_HAS_RELATION')
-      const_set('SOMEHOW_HAS_RELATION', params)
+      if class_variable_defined? :@@somehow_has_relation_options
+        class_variable_set(:@@somehow_has_relation_options, class_variable_get(:@@somehow_has_relation_options) << params)
+      else
+        class_variable_set(:@@somehow_has_relation_options, [params])
+      end
 
-      prefix = "related"
-      filter = params[:if]
-      relation = params[:one] || params[:many]
-      related = params[:as] || "#{prefix}_#{relation}"
-      to_flatten = params[:through] && params[:many]
+      somehow_has_relation_options = class_variable_get(:@@somehow_has_relation_options)
+      times_defined = somehow_has_relation_options.count
+      current_options = somehow_has_relation_options[times_defined-1]
+
+      relation = current_options[:one] || current_options[:many]
+      default_method_name = "related_#{relation}"
+
+      related = current_options[:as] || default_method_name
 
       # Dynamic Instance Method related_%{relation_name}
       define_method(related) do
-        begin
-          somehow_got = params[:through] ? somehow_look_for(relation, params[:through]) : send_and_filter(relation, filter)
-          to_flatten ? somehow_got.flatten : somehow_got
-        rescue
-          [] if params[:many]
-        end
-      end
-    end
-
-    def somehow_has_options(key=nil)
-      if const_defined?('SOMEHOW_HAS_RELATION')
-        key ? const_get('SOMEHOW_HAS_RELATION')[key] : const_get('SOMEHOW_HAS_RELATION')
+        somehow_found_or_recur relation, current_options[:if], current_options
       end
     end
   end
 
   module InstanceMethods
-    def somehow_look_for(relation, through)
+    def somehow_recur(relation, through, filter)
       first_step = send_and_filter(through)
-      condition = self.class.somehow_has_options(:if)
 
       if first_step.is_a? Array
-        first_step.map{|instance| instance.somehow_keep_looking_for(relation, condition)}
+        first_step.map{|instance| instance.somehow_found_or_recur(relation, filter)}
       else
-        first_step.somehow_keep_looking_for(relation, condition)
+        first_step.somehow_found_or_recur(relation, filter)
       end
     end
 
-    def somehow_keep_looking_for(relation, condition=nil)
-      if self.class.somehow_has_options :through
-        somehow_look_for(relation, self.class.somehow_has_options(:through))
-      else
-        condition.nil? ? send_and_filter(relation) : send_and_filter(relation, condition)
+    def somehow_found_or_recur(relation, condition=nil, opts=nil)
+      opts ||= self.class.send(:class_variable_get, :@@somehow_has_relation_options)
+      opts = [opts] unless opts.is_a? Array
+
+      found = []
+
+      opts.each do |opt|
+        begin
+          if opt.has_key?(:through)
+            found << somehow_recur(relation, opt[:through], opt[:if])
+          else
+            return send_and_filter(relation, condition)
+          end
+        rescue
+          found << (opt.has_key?(:many) ? [] : nil)
+        end
       end
+
+      found.all?{|elem| elem.nil? || (elem.is_a?(Array) && elem.empty?)} ? nil : found.compact.flatten
     end
 
     private
